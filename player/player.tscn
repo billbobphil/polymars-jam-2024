@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2d62nffj8822"]
+
+[ext_resource type="Script" path="res://player/Player.gd" id="1_b3w35"]
+[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="2_obxlo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dc1fn"]
+radius = 15.2971
+
+[node name="Player" type="Node2D" groups=["player"]]
+script = ExtResource("1_b3w35")
+travelSpeed = 300.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.219608, 1, 1, 1)
+texture = ExtResource("2_obxlo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dc1fn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.25, 1.25)
+position_smoothing_enabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

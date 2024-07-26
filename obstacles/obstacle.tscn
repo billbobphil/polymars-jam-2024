@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3oiqccgc66c2"]
+
+[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="1_w3axv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfbx8"]
+radius = 15.0
+
+[node name="Obstacle" type="Node2D" groups=["obstacles"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.0705882, 0.00784314, 1)
+texture = ExtResource("1_w3axv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xfbx8")
