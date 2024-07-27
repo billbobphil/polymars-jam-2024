@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkanfxcg1n7it"]
+
+[ext_resource type="Script" path="res://obstacles/PathFollowObstacle.gd" id="1_042cp"]
+[ext_resource type="PackedScene" uid="uid://d3oiqccgc66c2" path="res://obstacles/obstacle.tscn" id="1_jfq67"]
+
+[sub_resource type="Curve2D" id="Curve2D_h5rpq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 2, 0, 0, 0, 0, -0.488281, 252.239, 0, 0, 0, 0, 0, 1)
+}
+point_count = 3
+
+[node name="PathFollowObstacle" type="Node2D"]
+script = ExtResource("1_042cp")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_h5rpq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1, 2)
+rotation = 1.56875
+
+[node name="Obstacle" parent="Path2D/PathFollow2D" instance=ExtResource("1_jfq67")]
+position = Vector2(-2.00461, -0.99073)
+rotation = -1.57543

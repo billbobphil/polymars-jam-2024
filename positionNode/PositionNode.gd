@@ -7,8 +7,6 @@ signal position_node_selected
 @onready var sprite = $Sprite2D;
 @export var activeColor : Color;
 @export var inactiveColor : Color;
-@export var isStartingNode : bool = false;
-@export var isEndingNode : bool = false;
 @export var isCheckpoint : bool = false;
 
 func _ready():

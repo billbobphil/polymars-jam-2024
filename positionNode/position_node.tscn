@@ -53,9 +53,9 @@ shape = SubResource("CircleShape2D_eobhq")
 texture = ExtResource("1_5aw7a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "grow"
 libraries = {
 "": SubResource("AnimationLibrary_q7w73")
 }
-autoplay = "grow"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_click"]

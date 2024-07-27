@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://2bqbgn2xntdy"]
+
+[ext_resource type="PackedScene" uid="uid://b1qcyufjxphdb" path="res://positionNode/position_node.tscn" id="1_qw8yg"]
+
+[node name="MaxOverheatPositionNode" groups=["maxOverheatNodes"] instance=ExtResource("1_qw8yg")]
+inactiveColor = Color(0.772549, 0.313726, 0.168627, 1)
+
+[node name="Sprite2D" parent="." index="1"]
+self_modulate = Color(0.772549, 0.313726, 0.168627, 1)
