@@ -23,4 +23,14 @@ shape = SubResource("CircleShape2D_dc1fn")
 zoom = Vector2(1.25, 1.25)
 position_smoothing_enabled = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OverheatButton" type="Button" parent="CanvasLayer"]
+offset_left = 706.0
+offset_top = 564.0
+offset_right = 939.0
+offset_bottom = 699.0
+text = "OVERHEAT!"
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="pressed" from="CanvasLayer/OverheatButton" to="." method="overheat"]

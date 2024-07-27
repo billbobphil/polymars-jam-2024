@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://crrmwmxkikx7u"]
+
+[ext_resource type="Script" path="res://overheat/OverheatCollectible.gd" id="1_npyxa"]
+[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="1_wbg4k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vy1mc"]
+radius = 24.0832
+
+[node name="OverheatCollectible" type="Node2D" groups=["overheat_collectible"]]
+script = ExtResource("1_npyxa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.717647, 0.329412, 0, 1)
+texture = ExtResource("1_wbg4k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vy1mc")
