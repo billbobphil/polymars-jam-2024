@@ -17,12 +17,14 @@ var submit_score_http = HTTPRequest.new()
 @onready var leaderboardContentLabel = $LeaderboardContent;
 @export var shouldShowSubmitButton = false;
 @onready var submitTimeButton = $SubmitTimeButton;
+@onready var playerIdValue = $PlayerIdValue;
 
 func _ready():
 	if shouldShowSubmitButton:
 		submitTimeButton.show()
 	else:
 		submitTimeButton.hide()
+	_load_leaderboard();
 
 func _load_leaderboard():
 	_authentication_request()
@@ -78,6 +80,7 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 	
 	# Print server response
 	print(json.get_data())
+	playerIdValue.text = json.get_data().player_identifier;
 	
 	# Clear node
 	auth_http.queue_free()

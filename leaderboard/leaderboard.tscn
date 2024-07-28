@@ -19,6 +19,20 @@ offset_right = 1237.0
 offset_bottom = 636.0
 text = "Load Leaderboard to see top times"
 
+[node name="PlayerIdTitle" type="Label" parent="."]
+offset_left = 991.0
+offset_top = 96.0
+offset_right = 1059.0
+offset_bottom = 119.0
+text = "Player Id - "
+
+[node name="PlayerIdValue" type="Label" parent="."]
+offset_left = 1071.0
+offset_top = 96.0
+offset_right = 1146.0
+offset_bottom = 119.0
+text = "Loading..."
+
 [node name="SubmitTimeButton" type="Button" parent="."]
 offset_left = 1130.0
 offset_top = 671.0
@@ -26,12 +40,4 @@ offset_right = 1240.0
 offset_bottom = 702.0
 text = "Submit  Time"
 
-[node name="LoadLeaderboardButton" type="Button" parent="."]
-offset_left = 959.0
-offset_top = 671.0
-offset_right = 1109.0
-offset_bottom = 702.0
-text = "Load Leaderboard"
-
 [connection signal="pressed" from="SubmitTimeButton" to="." method="_upload_score"]
-[connection signal="pressed" from="LoadLeaderboardButton" to="." method="_load_leaderboard"]

@@ -11,9 +11,11 @@ func _ready():
 	add_child(menu);
 
 func startGame():
+	StatsTracker.totalRunTime = 0;
 	switchToScene(gameScene);
 
 func restartGame():
+	StatsTracker.totalRunTime = 0;
 	var nodes = get_tree().get_nodes_in_group("positionNodes")
 	for node in nodes:
 		if node:
@@ -34,7 +36,6 @@ func switchToFinish():
 	switchToScene(finishScene);
 
 func switchToScene(scene : PackedScene):
-	StatsTracker.totalRunTime = 0;
 	currentScene.queue_free();
 	currentScene = null;
 	call_deferred("loadNewScene", scene);
