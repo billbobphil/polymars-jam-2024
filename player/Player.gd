@@ -37,6 +37,9 @@ func _ready():
 
 func _process(delta):
 
+	if(Input.is_action_just_pressed("restart")):
+		get_tree().get_root().get_node("top").restartGame();
+
 	if(Input.is_action_just_pressed("overheat")):
 		overheat();
 

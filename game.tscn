@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://sldm530candc"]
+[gd_scene load_steps=16 format=3 uid="uid://sldm530candc"]
 
 [ext_resource type="Script" path="res://positionNode/PositionNodeManager.gd" id="1_ict28"]
 [ext_resource type="PackedScene" uid="uid://bky4sf3pqxj7a" path="res://positionNode/position_node_checkpoint.tscn" id="2_8uvmt"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://coggupjits18y" path="res://warp/warp_exit.tscn" id="10_nbpfi"]
 [ext_resource type="PackedScene" uid="uid://da0uhxbiwcqcx" path="res://obstacles/circle_path_follow_obstacle.tscn" id="11_k4fwa"]
 [ext_resource type="PackedScene" uid="uid://cwrq6w0fwet4p" path="res://finish/finish.tscn" id="14_77kpb"]
+[ext_resource type="Script" path="res://HUD.gd" id="15_hqy2d"]
 
 [node name="Game" type="Node2D"]
 
@@ -526,7 +527,6 @@ scaleSpeed = 0.3
 [node name="PathFollowObstacle30" parent="Obstacles" instance=ExtResource("7_artj7")]
 position = Vector2(14491, -2754)
 rotation = 1.55916
-scale = Vector2(1, 1)
 
 [node name="PathFollowObstacle31" parent="Obstacles" instance=ExtResource("7_artj7")]
 position = Vector2(14489, -2642)
@@ -566,9 +566,46 @@ warpExit = NodePath("../WarpExit-4")
 [node name="WarpExit-4" parent="Warps" instance=ExtResource("10_nbpfi")]
 position = Vector2(12469, -1430)
 
-[node name="Finish" parent="." instance=ExtResource("14_77kpb")]
+[node name="Finish" parent="." node_paths=PackedStringArray("hud") instance=ExtResource("14_77kpb")]
 position = Vector2(16201, -2513)
+hud = NodePath("../HUD")
 
 [node name="Player" parent="." node_paths=PackedStringArray("startingCheckpoint") instance=ExtResource("4_3aab6")]
-position = Vector2(39, 162)
+position = Vector2(15972, -2510)
 startingCheckpoint = NodePath("../PositionNodes/StartingCheckpoint")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("15_hqy2d")
+
+[node name="MinutesText" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "00"
+
+[node name="MinutesColon" type="Label" parent="HUD"]
+offset_left = 22.0
+offset_right = 62.0
+offset_bottom = 23.0
+text = ":"
+
+[node name="SecondsText" type="Label" parent="HUD"]
+offset_left = 30.0
+offset_right = 70.0
+offset_bottom = 23.0
+text = "00"
+
+[node name="SecondsColon" type="Label" parent="HUD"]
+offset_left = 53.0
+offset_right = 93.0
+offset_bottom = 23.0
+text = ":"
+
+[node name="MillisecondsText" type="Label" parent="HUD"]
+offset_left = 62.0
+offset_right = 102.0
+offset_bottom = 23.0
+text = "00"
+
+[node name="Timer" type="Timer" parent="HUD"]
+wait_time = 0.05
+autostart = true
