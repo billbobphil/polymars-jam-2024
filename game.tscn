@@ -566,10 +566,9 @@ warpExit = NodePath("../WarpExit-4")
 [node name="WarpExit-4" parent="Warps" instance=ExtResource("10_nbpfi")]
 position = Vector2(12469, -1430)
 
-[node name="Finish" parent="." instance=ExtResource("14_77kpb")]
+[node name="Finish" parent="." node_paths=PackedStringArray("hud") instance=ExtResource("14_77kpb")]
 position = Vector2(16201, -2513)
-hud = Object(CanvasLayer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","layer":1,"visible":true,"offset":Vector2(0, 0),"rotation":0.0,"scale":Vector2(1, 1),"transform":Transform2D(1, 0, 0, 1, 0, 0),"follow_viewport_enabled":false,"follow_viewport_scale":1.0,"script":ExtResource("15_hqy2d"))
-
+hud = NodePath("../HUD")
 
 [node name="Player" parent="." node_paths=PackedStringArray("startingCheckpoint") instance=ExtResource("4_3aab6")]
 position = Vector2(39, 161)

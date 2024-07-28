@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvceo2m3god6e"]
+
+[ext_resource type="Script" path="res://leaderboard/Leaderboard.gd" id="1_hcatr"]
+
+[node name="Leaderboard" type="CanvasLayer"]
+script = ExtResource("1_hcatr")
+
+[node name="LeaderboardTitle" type="Label" parent="."]
+offset_left = 840.0
+offset_top = 96.0
+offset_right = 940.0
+offset_bottom = 119.0
+text = "Leaderboard"
+
+[node name="LeaderboardContent" type="Label" parent="."]
+offset_left = 840.0
+offset_top = 135.0
+offset_right = 1237.0
+offset_bottom = 636.0
+text = "Load Leaderboard to see top times"
+
+[node name="SubmitTimeButton" type="Button" parent="."]
+offset_left = 1130.0
+offset_top = 671.0
+offset_right = 1240.0
+offset_bottom = 702.0
+text = "Submit  Time"
+
+[node name="LoadLeaderboardButton" type="Button" parent="."]
+offset_left = 959.0
+offset_top = 671.0
+offset_right = 1109.0
+offset_bottom = 702.0
+text = "Load Leaderboard"
+
+[connection signal="pressed" from="SubmitTimeButton" to="." method="_upload_score"]
+[connection signal="pressed" from="LoadLeaderboardButton" to="." method="_load_leaderboard"]

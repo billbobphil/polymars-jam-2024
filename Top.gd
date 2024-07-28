@@ -34,6 +34,7 @@ func switchToFinish():
 	switchToScene(finishScene);
 
 func switchToScene(scene : PackedScene):
+	StatsTracker.totalRunTime = 0;
 	currentScene.queue_free();
 	currentScene = null;
 	call_deferred("loadNewScene", scene);
