@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwrq6w0fwet4p"]
+
+[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="1_0yk2g"]
+[ext_resource type="Script" path="res://finish/Finish.gd" id="1_1wkio"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fncm"]
+radius = 34.0147
+
+[node name="Finish" type="Node2D"]
+script = ExtResource("1_1wkio")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.45098, 0.788235, 0, 1)
+texture = ExtResource("1_0yk2g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6fncm")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

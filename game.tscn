@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://sldm530candc"]
+[gd_scene load_steps=15 format=3 uid="uid://sldm530candc"]
 
 [ext_resource type="Script" path="res://positionNode/PositionNodeManager.gd" id="1_ict28"]
 [ext_resource type="PackedScene" uid="uid://bky4sf3pqxj7a" path="res://positionNode/position_node_checkpoint.tscn" id="2_8uvmt"]
@@ -13,12 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://b5lgehhcknpij" path="res://breakable/breakable.tscn" id="10_6vdpx"]
 [ext_resource type="PackedScene" uid="uid://coggupjits18y" path="res://warp/warp_exit.tscn" id="10_nbpfi"]
 [ext_resource type="PackedScene" uid="uid://da0uhxbiwcqcx" path="res://obstacles/circle_path_follow_obstacle.tscn" id="11_k4fwa"]
+[ext_resource type="PackedScene" uid="uid://cwrq6w0fwet4p" path="res://finish/finish.tscn" id="14_77kpb"]
 
 [node name="Game" type="Node2D"]
-
-[node name="Player" parent="." node_paths=PackedStringArray("startingCheckpoint") instance=ExtResource("4_3aab6")]
-position = Vector2(9425, 999)
-startingCheckpoint = NodePath("../PositionNodes/StartingCheckpoint")
 
 [node name="PositionNodeManager" type="Node2D" parent="."]
 script = ExtResource("1_ict28")
@@ -178,6 +175,60 @@ position = Vector2(12661, -1707)
 [node name="PositionNode42" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
 position = Vector2(12835, -1431)
 
+[node name="PositionNode43" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(12941.1, -2028.43)
+
+[node name="PositionNode44" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(12399, -2031)
+
+[node name="PositionNode45" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(12395, -2333)
+
+[node name="PositionNode46" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(12944, -2336)
+
+[node name="PositionNode47" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(12389, -2615)
+
+[node name="PositionNodeCheckpoint8" parent="PositionNodes" instance=ExtResource("2_8uvmt")]
+position = Vector2(12939, -2855)
+
+[node name="PositionNode48" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(13394, -2860)
+
+[node name="PositionNode49" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(12939, -2627)
+
+[node name="PositionNode50" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(13745, -3041)
+
+[node name="PositionNode51" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(13756, -2686)
+
+[node name="PositionNode52" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(14061, -2951)
+
+[node name="PositionNode53" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(14062, -2591)
+
+[node name="PositionNode54" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(14332, -3043)
+
+[node name="PositionNode55" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(14377, -2518)
+
+[node name="PositionNode56" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(14966, -2518)
+
+[node name="PositionNode57" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(15501, -2513)
+
+[node name="PositionNode58" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(15976, -2511)
+
+[node name="PositionNode59" parent="PositionNodes" instance=ExtResource("3_m8gkp")]
+position = Vector2(16418, -2513)
+
 [node name="Overheats" type="Node2D" parent="."]
 
 [node name="OverheatCollectible" parent="Overheats" instance=ExtResource("5_7n7y4")]
@@ -227,6 +278,21 @@ position = Vector2(5776.99, 533.576)
 
 [node name="OverheatCollectible16" parent="Overheats" instance=ExtResource("5_7n7y4")]
 position = Vector2(6050, 535)
+
+[node name="OverheatCollectible17" parent="Overheats" instance=ExtResource("5_7n7y4")]
+position = Vector2(12663, -2493)
+
+[node name="OverheatCollectible18" parent="Overheats" instance=ExtResource("5_7n7y4")]
+position = Vector2(12495, -2193)
+
+[node name="OverheatCollectible19" parent="Overheats" instance=ExtResource("5_7n7y4")]
+position = Vector2(15172, -2516)
+
+[node name="OverheatCollectible20" parent="Overheats" instance=ExtResource("5_7n7y4")]
+position = Vector2(15321, -2517)
+
+[node name="OverheatCollectible21" parent="Overheats" instance=ExtResource("5_7n7y4")]
+position = Vector2(15760, -2513)
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -358,7 +424,7 @@ rotation = -3.13835
 position = Vector2(9485, 913)
 
 [node name="CirclePathFollowObstacle3" parent="Obstacles" instance=ExtResource("11_k4fwa")]
-position = Vector2(9646, 937)
+position = Vector2(9542, 855)
 pathSpeed = 75
 
 [node name="PathFollowObstacle19" parent="Obstacles" instance=ExtResource("7_artj7")]
@@ -378,6 +444,100 @@ position = Vector2(12661, -1430)
 position = Vector2(12663, -1554)
 rotation = -1.5708
 pathSpeed = 100
+
+[node name="PathFollowObstacle22" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(12266, -1852)
+rotation = -1.57457
+pathSpeed = 65
+
+[node name="PathFollowObstacle23" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(12536, -1853)
+rotation = -1.57457
+pathSpeed = 100
+
+[node name="PathFollowObstacle24" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(12804, -1854)
+rotation = -1.57457
+pathSpeed = 65
+
+[node name="Obstacle7" parent="Obstacles" instance=ExtResource("6_y4vsm")]
+position = Vector2(12397, -2188)
+
+[node name="Obstacle8" parent="Obstacles" instance=ExtResource("6_y4vsm")]
+position = Vector2(12946, -2190)
+
+[node name="Obstacle9" parent="Obstacles" instance=ExtResource("6_y4vsm")]
+position = Vector2(12498, -2272)
+
+[node name="GrowingObstacle6" parent="Obstacles" instance=ExtResource("8_qd326")]
+position = Vector2(12826, -2257)
+
+[node name="CirclePathFollowObstacle4" parent="Obstacles" instance=ExtResource("11_k4fwa")]
+position = Vector2(12454, -2576)
+
+[node name="CirclePathFollowObstacle5" parent="Obstacles" instance=ExtResource("11_k4fwa")]
+position = Vector2(12708, -2491)
+
+[node name="CirclePathFollowObstacle6" parent="Obstacles" instance=ExtResource("11_k4fwa")]
+position = Vector2(12866, -2521)
+rotation = -3.1351
+
+[node name="PathFollowObstacle25" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(13747, -3190)
+
+[node name="PathFollowObstacle26" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(14331, -3194)
+pathSpeed = 75
+
+[node name="PathFollowObstacle27" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(14233, -2592)
+rotation = 1.56409
+pathSpeed = 35
+
+[node name="GrowingObstacle7" parent="Obstacles" instance=ExtResource("8_qd326")]
+position = Vector2(14062, -3005)
+maxScale = 3.0
+minScale = 0.3
+scaleSpeed = 0.3
+
+[node name="CirclePathFollowObstacle7" parent="Obstacles" instance=ExtResource("11_k4fwa")]
+position = Vector2(13670, -2715)
+
+[node name="PathFollowObstacle28" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(13879, -2868)
+rotation = -0.818977
+
+[node name="PathFollowObstacle29" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(14231, -2879)
+pathSpeed = 75
+
+[node name="GrowingObstacle8" parent="Obstacles" instance=ExtResource("8_qd326")]
+position = Vector2(13612, -2909)
+maxScale = 2.0
+
+[node name="GrowingObstacle9" parent="Obstacles" instance=ExtResource("8_qd326")]
+position = Vector2(13537, -3005)
+maxScale = 2.0
+
+[node name="GrowingObstacle10" parent="Obstacles" instance=ExtResource("8_qd326")]
+position = Vector2(13892, -2713)
+scaleSpeed = 0.3
+
+[node name="PathFollowObstacle30" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(14491, -2754)
+rotation = 1.55916
+scale = Vector2(1, 1)
+
+[node name="PathFollowObstacle31" parent="Obstacles" instance=ExtResource("7_artj7")]
+position = Vector2(14489, -2642)
+rotation = 1.55896
+pathSpeed = 75
+
+[node name="Obstacle10" parent="Obstacles" instance=ExtResource("6_y4vsm")]
+position = Vector2(14466, -2931)
+
+[node name="Obstacle11" parent="Obstacles" instance=ExtResource("6_y4vsm")]
+position = Vector2(14723, -2714)
 
 [node name="Warps" type="Node2D" parent="."]
 
@@ -405,3 +565,10 @@ warpExit = NodePath("../WarpExit-4")
 
 [node name="WarpExit-4" parent="Warps" instance=ExtResource("10_nbpfi")]
 position = Vector2(12469, -1430)
+
+[node name="Finish" parent="." instance=ExtResource("14_77kpb")]
+position = Vector2(16201, -2513)
+
+[node name="Player" parent="." node_paths=PackedStringArray("startingCheckpoint") instance=ExtResource("4_3aab6")]
+position = Vector2(39, 162)
+startingCheckpoint = NodePath("../PositionNodes/StartingCheckpoint")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1ryxewd4vsyq"]
+
+[ext_resource type="Script" path="res://menu/Menu.gd" id="1_u5400"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_u5400")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayButton" type="Button" parent="CanvasLayer"]
+offset_left = 615.0
+offset_top = 286.0
+offset_right = 662.0
+offset_bottom = 317.0
+text = "PLAY"
+
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
