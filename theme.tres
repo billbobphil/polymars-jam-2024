@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://khgcs3srjs2a"]
+
+[ext_resource type="Texture2D" uid="uid://lawx0k3ok5tu" path="res://misc-art/button.png" id="1_3cnv2"]
+[ext_resource type="FontFile" uid="uid://dtcegfvqehkcv" path="res://fonts/zai_HongKongGraffiti.ttf" id="1_xo86o"]
+[ext_resource type="FontFile" uid="uid://cmjtkjqxrgjkk" path="res://fonts/dogicapixelbold.ttf" id="3_ew60u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b6unf"]
+texture = ExtResource("1_3cnv2")
+modulate_color = Color(0.368627, 0.34902, 0.513726, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uc3cs"]
+texture = ExtResource("1_3cnv2")
+modulate_color = Color(0.956863, 0.611765, 0.117647, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ws8bo"]
+texture = ExtResource("1_3cnv2")
+modulate_color = Color(0.956863, 0.611765, 0.117647, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6yygp"]
+texture = ExtResource("1_3cnv2")
+modulate_color = Color(0.870588, 0.431373, 0.0470588, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cquap"]
+texture = ExtResource("1_3cnv2")
+modulate_color = Color(0.694118, 0.054902, 0.145098, 1)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_xo86o")
+Button/styles/disabled = SubResource("StyleBoxTexture_b6unf")
+Button/styles/focus = SubResource("StyleBoxTexture_uc3cs")
+Button/styles/hover = SubResource("StyleBoxTexture_ws8bo")
+Button/styles/normal = SubResource("StyleBoxTexture_6yygp")
+Button/styles/pressed = SubResource("StyleBoxTexture_cquap")
+Label/colors/font_color = Color(0.956863, 0.611765, 0.117647, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("3_ew60u")

@@ -30,6 +30,7 @@ func _load_leaderboard():
 	_authentication_request()
 
 func _authentication_request():
+	submitTimeButton.disabled = true;
 	leaderboardContentLabel.text = "Authenticating...";
 	# Check if a player session exists
 	var player_session_exists = false
@@ -81,6 +82,7 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 	# Print server response
 	print(json.get_data())
 	playerIdValue.text = json.get_data().player_identifier;
+	submitTimeButton.disabled = false;
 	
 	# Clear node
 	auth_http.queue_free()

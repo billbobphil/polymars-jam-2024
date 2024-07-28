@@ -1,43 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvceo2m3god6e"]
+[gd_scene load_steps=3 format=3 uid="uid://bvceo2m3god6e"]
 
 [ext_resource type="Script" path="res://leaderboard/Leaderboard.gd" id="1_hcatr"]
+[ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="2_42ytn"]
 
 [node name="Leaderboard" type="CanvasLayer"]
 script = ExtResource("1_hcatr")
 
 [node name="LeaderboardTitle" type="Label" parent="."]
-offset_left = 840.0
-offset_top = 96.0
-offset_right = 940.0
-offset_bottom = 119.0
+offset_left = 715.0
+offset_top = 74.0
+offset_right = 970.0
+offset_bottom = 113.0
+theme = ExtResource("2_42ytn")
+theme_override_colors/font_color = Color(0.972549, 0.760784, 0.133333, 1)
+theme_override_font_sizes/font_size = 24
 text = "Leaderboard"
 
 [node name="LeaderboardContent" type="Label" parent="."]
-offset_left = 840.0
-offset_top = 135.0
-offset_right = 1237.0
-offset_bottom = 636.0
+offset_left = 715.0
+offset_top = 211.0
+offset_right = 1189.0
+offset_bottom = 602.0
+theme = ExtResource("2_42ytn")
 text = "Load Leaderboard to see top times"
 
 [node name="PlayerIdTitle" type="Label" parent="."]
-offset_left = 991.0
-offset_top = 96.0
-offset_right = 1059.0
-offset_bottom = 119.0
+offset_left = 716.0
+offset_top = 128.0
+offset_right = 870.0
+offset_bottom = 151.0
+theme = ExtResource("2_42ytn")
 text = "Player Id - "
 
 [node name="PlayerIdValue" type="Label" parent="."]
-offset_left = 1071.0
-offset_top = 96.0
-offset_right = 1146.0
-offset_bottom = 119.0
+offset_left = 717.0
+offset_top = 171.0
+offset_right = 847.0
+offset_bottom = 210.0
+theme = ExtResource("2_42ytn")
 text = "Loading..."
 
 [node name="SubmitTimeButton" type="Button" parent="."]
-offset_left = 1130.0
-offset_top = 671.0
-offset_right = 1240.0
-offset_bottom = 702.0
+offset_left = 819.0
+offset_top = 611.0
+offset_right = 1133.0
+offset_bottom = 709.0
+theme = ExtResource("2_42ytn")
 text = "Submit  Time"
 
 [connection signal="pressed" from="SubmitTimeButton" to="." method="_upload_score"]

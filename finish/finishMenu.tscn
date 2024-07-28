@@ -1,34 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3r3nld6v706i"]
+[gd_scene load_steps=5 format=3 uid="uid://b3r3nld6v706i"]
 
 [ext_resource type="Script" path="res://finish/FinishMenu.gd" id="1_yuxxg"]
+[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="2_w3coa"]
 [ext_resource type="PackedScene" uid="uid://bvceo2m3god6e" path="res://leaderboard/leaderboard.tscn" id="2_yk82y"]
+[ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="3_rvof1"]
 
 [node name="FinishMenu" type="Node2D"]
 script = ExtResource("1_yuxxg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0.133333, 0.0117647, 0.12549, 1)
+position = Vector2(653, 364)
+scale = Vector2(41.0313, 23.5625)
+texture = ExtResource("2_w3coa")
+
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
-offset_left = 46.0
-offset_top = 99.0
-offset_right = 103.0
-offset_bottom = 130.0
+offset_left = 116.0
+offset_top = 605.0
+offset_right = 373.0
+offset_bottom = 707.0
+theme = ExtResource("3_rvof1")
 text = "MENU"
 
 [node name="YourTimeLabel" type="Label" parent="CanvasLayer"]
-offset_left = 470.0
-offset_top = 169.0
-offset_right = 553.0
-offset_bottom = 192.0
-text = "Your Time:"
+offset_left = 34.0
+offset_top = 130.0
+offset_right = 602.0
+offset_bottom = 186.0
+theme = ExtResource("3_rvof1")
+theme_override_colors/font_color = Color(0.972549, 0.760784, 0.133333, 1)
+theme_override_font_sizes/font_size = 64
+text = "Your Time"
 
 [node name="YourTimeValue" type="Label" parent="CanvasLayer"]
-offset_left = 452.0
-offset_top = 200.0
-offset_right = 585.0
-offset_bottom = 223.0
+offset_left = 81.0
+offset_top = 249.0
+offset_right = 509.0
+offset_bottom = 277.0
+theme = ExtResource("3_rvof1")
+theme_override_colors/font_color = Color(0.956863, 0.611765, 0.117647, 1)
+theme_override_font_sizes/font_size = 32
 text = "000000000
 "
+horizontal_alignment = 1
 
 [node name="Leaderboard" parent="." instance=ExtResource("2_yk82y")]
 shouldShowSubmitButton = true

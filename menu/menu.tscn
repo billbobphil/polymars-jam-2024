@@ -1,19 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1ryxewd4vsyq"]
+[gd_scene load_steps=6 format=3 uid="uid://d1ryxewd4vsyq"]
 
 [ext_resource type="Script" path="res://menu/Menu.gd" id="1_u5400"]
+[ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="2_b6dr1"]
+[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="2_ce7yu"]
 [ext_resource type="PackedScene" uid="uid://bvceo2m3god6e" path="res://leaderboard/leaderboard.tscn" id="2_s5od7"]
+[ext_resource type="Texture2D" uid="uid://cmh2pj3e6xp44" path="res://misc-art/title.png" id="3_cotxi"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_u5400")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0.133333, 0.0117647, 0.12549, 1)
+position = Vector2(653, 364)
+scale = Vector2(41.0313, 23.5625)
+texture = ExtResource("2_ce7yu")
+
 [node name="PlayButton" type="Button" parent="CanvasLayer"]
-offset_left = 615.0
-offset_top = 286.0
-offset_right = 662.0
-offset_bottom = 317.0
+offset_left = 146.0
+offset_top = 612.0
+offset_right = 456.0
+offset_bottom = 702.0
+scale = Vector2(1.00172, 1.00694)
+theme = ExtResource("2_b6dr1")
 text = "PLAY"
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0.427451, 0.0352941, 0.141176, 1)
+position = Vector2(336.875, 293.888)
+scale = Vector2(0.917227, 0.917227)
+texture = ExtResource("3_cotxi")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0.694118, 0.054902, 0.145098, 1)
+position = Vector2(344.875, 301.888)
+scale = Vector2(0.917227, 0.917227)
+texture = ExtResource("3_cotxi")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0.956863, 0.611765, 0.117647, 1)
+position = Vector2(352.875, 307.888)
+scale = Vector2(0.917227, 0.917227)
+texture = ExtResource("3_cotxi")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0.956863, 0.611765, 0.117647, 1)
+position = Vector2(361.875, 313.888)
+scale = Vector2(0.917227, 0.917227)
+texture = ExtResource("3_cotxi")
 
 [node name="Leaderboard" parent="." instance=ExtResource("2_s5od7")]
 
