@@ -2,7 +2,7 @@ extends Node
 
 # Use this game API key if you want to test with a functioning leaderboard
 # "987dbd0b9e5eb3749072acc47a210996eea9feb0"
-# var game_API_key = ""; #prod key
+# var game_API_key = "prod_a45698f0ada64b6abff0a3e868f561a7"; #prod key
 var game_API_key = "dev_688c275c34a04c76894f5a75f4bf529b"; #staging key
 # var game_API_key = "987dbd0b9e5eb3749072acc47a210996eea9feb0"; #test key
 var development_mode = true

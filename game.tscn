@@ -23,6 +23,7 @@ script = ExtResource("1_ict28")
 
 [node name="MaxOverheatPositionNode" parent="PositionNodeManager" instance=ExtResource("3_eivpc")]
 position = Vector2(7683, 973)
+activeColor = Color(0.443137, 0.588235, 0.713726, 1)
 
 [node name="PositionNodes" type="Node2D" parent="."]
 

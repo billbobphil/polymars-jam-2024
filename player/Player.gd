@@ -34,6 +34,7 @@ var allowOverheat : bool = true;
 func _ready():
 	playerInitialSpeed = travelSpeed;
 	currentCheckpoint = startingCheckpoint;
+	currentCheckpoint.markCheckpointActive();
 
 func _process(delta):
 
@@ -67,9 +68,10 @@ func _process(delta):
 		# var angle: float = direction.angle();
 		# sprite.rotation = angle + PI / 2;
 		if (self.global_position.distance_to(nodeToTravelTo.global_position) <= 3):
-			if(nodeToTravelTo is PositionNode):
-				if(nodeToTravelTo.isCheckpoint):
-					currentCheckpoint = nodeToTravelTo;
+			if(nodeToTravelTo is PositionNode && nodeToTravelTo.isCheckpoint):
+				currentCheckpoint.markCheckpointInactive();
+				currentCheckpoint = nodeToTravelTo;
+				currentCheckpoint.markCheckpointActive();
 				#TODO: some sort of checkpoint celebration
 			isTravelling = false;
 			nodeToTravelTo = null;

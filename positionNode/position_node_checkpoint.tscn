@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bky4sf3pqxj7a"]
+[gd_scene load_steps=3 format=3 uid="uid://bky4sf3pqxj7a"]
 
 [ext_resource type="PackedScene" uid="uid://b1qcyufjxphdb" path="res://positionNode/position_node.tscn" id="1_bu077"]
+[ext_resource type="Texture2D" uid="uid://dby55itf3uc01" path="res://aseprite_files/checkpoint_ring.png" id="2_bywbq"]
 
 [node name="PositionNodeCheckpoint" instance=ExtResource("1_bu077")]
 scale = Vector2(1.00158, 1)
-activeColor = Color(0.576471, 0.47451, 0.952941, 1)
-inactiveColor = Color(0.886275, 0.435294, 0.729412, 1)
 isCheckpoint = true
+inactiveCheckpointColor = Color(1, 1, 1, 0.196078)
+activeCheckpointColor = Color(1, 1, 1, 1)
 
-[node name="Sprite2D" parent="." index="1"]
-self_modulate = Color(0.886275, 0.435294, 0.729412, 1)
+[node name="CheckpointRingSprite" type="Sprite2D" parent="." index="3"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_bywbq")

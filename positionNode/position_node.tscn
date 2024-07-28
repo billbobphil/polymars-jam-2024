@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1qcyufjxphdb"]
 
-[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="1_5aw7a"]
 [ext_resource type="Script" path="res://positionNode/PositionNode.gd" id="1_exej6"]
+[ext_resource type="Texture2D" uid="uid://cdn2djpjsyek6" path="res://aseprite_files/position_node_base.png" id="2_dce08"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eobhq"]
 radius = 29.2746
@@ -41,8 +41,8 @@ _data = {
 
 [node name="PositionNode" type="Node2D" groups=["positionNodes"]]
 script = ExtResource("1_exej6")
-activeColor = Color(0.443137, 0.588235, 0.713726, 1)
-inactiveColor = Color(0.772549, 0.588235, 0.168627, 1)
+activeColor = Color(1, 1, 1, 1)
+inactiveColor = Color(0.541176, 0.564706, 0.541176, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -50,7 +50,7 @@ inactiveColor = Color(0.772549, 0.588235, 0.168627, 1)
 shape = SubResource("CircleShape2D_eobhq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5aw7a")
+texture = ExtResource("2_dce08")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
