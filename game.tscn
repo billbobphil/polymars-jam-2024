@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://sldm530candc"]
+[gd_scene load_steps=19 format=3 uid="uid://sldm530candc"]
 
 [ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="1_crtg2"]
 [ext_resource type="Script" path="res://positionNode/PositionNodeManager.gd" id="1_ict28"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cwrq6w0fwet4p" path="res://finish/finish.tscn" id="14_77kpb"]
 [ext_resource type="Script" path="res://HUD.gd" id="15_hqy2d"]
 [ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="17_ix074"]
+[ext_resource type="AudioStream" uid="uid://1ay4d13tstrc" path="res://music/polymars-jam-main.wav" id="18_imxld"]
 
 [node name="Game" type="Node2D"]
 
@@ -782,3 +783,8 @@ text = "00"
 [node name="Timer" type="Timer" parent="HUD"]
 wait_time = 0.05
 autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_imxld")
+volume_db = -6.0
+autoplay = true

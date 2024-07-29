@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3r3nld6v706i"]
+[gd_scene load_steps=9 format=3 uid="uid://b3r3nld6v706i"]
 
 [ext_resource type="Script" path="res://finish/FinishMenu.gd" id="1_yuxxg"]
 [ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="2_w3coa"]
 [ext_resource type="PackedScene" uid="uid://bvceo2m3god6e" path="res://leaderboard/leaderboard.tscn" id="2_yk82y"]
 [ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="3_rvof1"]
 [ext_resource type="FontFile" uid="uid://dde8we5p4pnw5" path="res://fonts/GraffitiUrban-Shadow.otf" id="4_0lktn"]
+[ext_resource type="Script" path="res://ButtonSound.gd" id="4_q7fdh"]
 [ext_resource type="FontFile" uid="uid://cvn7e2hbany71" path="res://fonts/GraffitiUrban-Regular.otf" id="5_s0nuy"]
+[ext_resource type="AudioStream" uid="uid://de6cbq8ry06e8" path="res://music/polymars-jam-menu.wav" id="7_auoiy"]
 
 [node name="FinishMenu" type="Node2D"]
 script = ExtResource("1_yuxxg")
@@ -25,6 +27,7 @@ offset_right = 373.0
 offset_bottom = 707.0
 theme = ExtResource("3_rvof1")
 text = "MENU"
+script = ExtResource("4_q7fdh")
 
 [node name="YourTimeLabel2" type="Label" parent="CanvasLayer"]
 offset_left = 65.0
@@ -63,4 +66,10 @@ horizontal_alignment = 1
 [node name="Leaderboard" parent="." instance=ExtResource("2_yk82y")]
 shouldShowSubmitButton = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_auoiy")
+volume_db = -12.0
+autoplay = true
+
+[connection signal="mouse_entered" from="CanvasLayer/MenuButton" to="CanvasLayer/MenuButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]

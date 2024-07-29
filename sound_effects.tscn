@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://qbg7maatgb24"]
+
+[ext_resource type="Script" path="res://SoundEffectsManager.gd" id="1_m7lah"]
+[ext_resource type="AudioStream" uid="uid://d2pg66endvri5" path="res://soundEffects/button-hover.mp3" id="2_cpvkp"]
+[ext_resource type="AudioStream" uid="uid://dw2tvwnbc23hw" path="res://soundEffects/button-click.mp3" id="3_k7k8k"]
+[ext_resource type="AudioStream" uid="uid://btr7x3mipw4y8" path="res://soundEffects/get-hit.wav" id="4_3e8jw"]
+[ext_resource type="AudioStream" uid="uid://bndci0co814l6" path="res://soundEffects/pickup.wav" id="5_trjl6"]
+[ext_resource type="AudioStream" uid="uid://cdn5upqflhuw8" path="res://soundEffects/overheat.wav" id="6_r36ix"]
+[ext_resource type="AudioStream" uid="uid://bj4hdi6kgpup7" path="res://soundEffects/break.wav" id="7_c4ufg"]
+[ext_resource type="AudioStream" uid="uid://cigbdwai2rgmm" path="res://soundEffects/warp.mp3" id="8_72nxb"]
+[ext_resource type="AudioStream" uid="uid://dyuefrpu203wq" path="res://soundEffects/select.wav" id="9_3muvk"]
+[ext_resource type="AudioStream" uid="uid://bhj54uo41b2nk" path="res://soundEffects/overheat-end.mp3" id="10_3rdii"]
+[ext_resource type="AudioStream" uid="uid://cwx4mjaol7hwf" path="res://soundEffects/get-checkpoint.mp3" id="11_7ihy4"]
+
+[node name="SoundEffects" type="Node2D" node_paths=PackedStringArray("buttonHover", "buttonClick", "getHit", "collectOverheat", "goIntoOverheat", "breakEffect", "warp", "clickPositionNode", "endOverheat")]
+script = ExtResource("1_m7lah")
+buttonHover = NodePath("ButtonHover")
+buttonClick = NodePath("ButtonClick")
+getHit = NodePath("GetHit")
+collectOverheat = NodePath("CollectOverheat")
+goIntoOverheat = NodePath("GoIntoOverheat")
+breakEffect = NodePath("Break")
+warp = NodePath("Warp")
+clickPositionNode = NodePath("ClickPositionNode")
+endOverheat = NodePath("EndOverheat")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cpvkp")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k7k8k")
+
+[node name="GetHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3e8jw")
+volume_db = -8.0
+
+[node name="CollectOverheat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_trjl6")
+volume_db = -10.0
+
+[node name="GoIntoOverheat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r36ix")
+volume_db = -12.0
+
+[node name="Break" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_c4ufg")
+volume_db = -15.0
+
+[node name="Warp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_72nxb")
+volume_db = -8.0
+
+[node name="ClickPositionNode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_3muvk")
+volume_db = -12.0
+
+[node name="EndOverheat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_3rdii")
+
+[node name="GetCheckpoint" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_7ihy4")
+volume_db = -4.0

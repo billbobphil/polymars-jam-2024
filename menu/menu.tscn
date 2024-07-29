@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1ryxewd4vsyq"]
+[gd_scene load_steps=11 format=3 uid="uid://d1ryxewd4vsyq"]
 
 [ext_resource type="Script" path="res://menu/Menu.gd" id="1_u5400"]
 [ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="2_b6dr1"]
 [ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="2_ce7yu"]
 [ext_resource type="PackedScene" uid="uid://bvceo2m3god6e" path="res://leaderboard/leaderboard.tscn" id="2_s5od7"]
 [ext_resource type="Texture2D" uid="uid://cmh2pj3e6xp44" path="res://misc-art/title.png" id="3_cotxi"]
+[ext_resource type="Script" path="res://ButtonSound.gd" id="4_bavva"]
 [ext_resource type="Texture2D" uid="uid://dauusimea5td7" path="res://aseprite_files/player_attempt.png" id="5_6gu3y"]
 [ext_resource type="FontFile" uid="uid://dde8we5p4pnw5" path="res://fonts/GraffitiUrban-Shadow.otf" id="5_efieb"]
 [ext_resource type="FontFile" uid="uid://cvn7e2hbany71" path="res://fonts/GraffitiUrban-Regular.otf" id="6_qhl2a"]
+[ext_resource type="AudioStream" uid="uid://de6cbq8ry06e8" path="res://music/polymars-jam-menu.wav" id="9_i7edx"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_u5400")
@@ -28,6 +30,7 @@ offset_bottom = 702.0
 scale = Vector2(1.00172, 1.00694)
 theme = ExtResource("2_b6dr1")
 text = "PLAY"
+script = ExtResource("4_bavva")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
 visible = false
@@ -88,4 +91,10 @@ Runner"
 
 [node name="Leaderboard" parent="." instance=ExtResource("2_s5od7")]
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_i7edx")
+volume_db = -12.0
+autoplay = true
+
+[connection signal="mouse_entered" from="CanvasLayer/PlayButton" to="CanvasLayer/PlayButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]

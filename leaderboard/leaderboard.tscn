@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvceo2m3god6e"]
+[gd_scene load_steps=5 format=3 uid="uid://bvceo2m3god6e"]
 
 [ext_resource type="Script" path="res://leaderboard/Leaderboard.gd" id="1_hcatr"]
 [ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="2_42ytn"]
 [ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="2_s7ard"]
+[ext_resource type="Script" path="res://ButtonSound.gd" id="4_1kuph"]
 
 [node name="Leaderboard" type="CanvasLayer"]
 script = ExtResource("1_hcatr")
@@ -52,7 +53,11 @@ offset_left = 819.0
 offset_top = 611.0
 offset_right = 1133.0
 offset_bottom = 709.0
+scale = Vector2(1, 0.934526)
 theme = ExtResource("2_42ytn")
 text = "Submit  Time"
+script = ExtResource("4_1kuph")
 
+[connection signal="mouse_entered" from="SubmitTimeButton" to="SubmitTimeButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="SubmitTimeButton" to="." method="_upload_score"]
+[connection signal="pressed" from="SubmitTimeButton" to="SubmitTimeButton" method="_on_pressed"]

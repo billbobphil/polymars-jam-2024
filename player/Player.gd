@@ -32,6 +32,7 @@ var zoomOutTime : float = .5;
 var zoomInTime : float = .5;
 var isWarping : bool = false;
 var allowOverheat : bool = true;
+var overheatAlreadyStartedEnding : bool = false;
 
 func _ready():
 	playerInitialSpeed = travelSpeed;
@@ -60,6 +61,9 @@ func _process(delta):
 			travelSpeed = lerp(playerInitialSpeed * playerSpeedMultiplier, playerInitialSpeed, lerpFactor);
 			camera.zoom.x = lerp(cameraOverheatZoom, cameraInitialZoom, lerpFactor);
 			camera.zoom.y = lerp(cameraOverheatZoom, cameraInitialZoom, lerpFactor);
+			if(!overheatAlreadyStartedEnding):
+				overheatAlreadyStartedEnding = true;
+				SoundEffects.playSound(SoundEffects.endOverheat);
 
 		if(overheatTimer >= overheatSeconds):
 			endOverheat();
@@ -74,7 +78,7 @@ func _process(delta):
 				currentCheckpoint.markCheckpointInactive();
 				currentCheckpoint = nodeToTravelTo;
 				currentCheckpoint.markCheckpointActive();
-				#TODO: some sort of checkpoint celebration
+				SoundEffects.playSound(SoundEffects.getCheckpoint);
 			isTravelling = false;
 			nodeToTravelTo = null;
 
@@ -86,10 +90,13 @@ func overheat():
 		overheatLabel.visible = false;
 		overheatChargeLabel.visible = true;
 		overheatBar.value = 0;
+		SoundEffects.playSound(SoundEffects.goIntoOverheat);
+		overheatAlreadyStartedEnding = false;
 
 func moveToNode(node):
 	if(isWarping):
 		return;
+	SoundEffects.playSound(SoundEffects.clickPositionNode);
 	nodeToTravelTo = node;
 	isTravelling = true;
 
@@ -104,12 +111,14 @@ func _on_area_2d_area_entered(area: Area2D):
 	if (parent.is_in_group("breakables")):
 		if(isOverheatActive):
 			parent.queue_free();
+			SoundEffects.playSound(SoundEffects.breakEffect);
 		else:
 			getHit();
 		return;
 
 	if(parent.is_in_group("maxOverheatNodes")):
 		currentOverheatCollections = requiredOverheatCollections;
+		SoundEffects.playSound(SoundEffects.collectOverheat);
 		overheatBar.value = 100;
 		makeOverheatAvailable();
 		return;
@@ -120,6 +129,7 @@ func _on_area_2d_area_entered(area: Area2D):
 		parent.queue_free();
 		print("Overheat collected");
 		currentOverheatCollections += 1;
+		SoundEffects.playSound(SoundEffects.collectOverheat);
 		overheatBar.value = (float(currentOverheatCollections) / float(requiredOverheatCollections)) * 100;
 		print("current overheats: ", currentOverheatCollections);
 		if(currentOverheatCollections >= requiredOverheatCollections):
@@ -132,10 +142,10 @@ func makeOverheatAvailable():
 	overheatChargeLabel.visible = false;
 
 func getHit():
-	#TODO: make it fancy
 	print("Player hit");
 	isTravelling = false;
 	nodeToTravelTo = null;
+	SoundEffects.playSound(SoundEffects.getHit);
 	endOverheat();
 	self.global_position = currentCheckpoint.global_position;
 
@@ -145,12 +155,15 @@ func endOverheat():
 	travelSpeed = playerInitialSpeed;
 	camera.zoom.x = cameraInitialZoom;
 	camera.zoom.y = cameraInitialZoom;
+	overheatAlreadyStartedEnding = false;
+
 
 func warpToPoint(node : WarpExit, warpSpeed):
 	travelSpeed = warpSpeed;
 	moveToNode(node);
 	isWarping = true;
 	allowOverheat = false;
+	SoundEffects.playSound(SoundEffects.warp);
 
 func endWarp():
 	travelSpeed = playerInitialSpeed;
