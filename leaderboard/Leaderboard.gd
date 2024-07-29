@@ -75,13 +75,13 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 	var file = FileAccess.open("user://LootLocker.data", FileAccess.WRITE)
 	file.store_string(json.get_data().player_identifier)
 	file.close()
-	
+	print(json.get_data());
 	# Save session_token to memory
 	session_token = json.get_data().session_token
 	
 	# Print server response
 	print(json.get_data())
-	playerIdValue.text = json.get_data().player_identifier;
+	playerIdValue.text = str(json.get_data().player_id);
 	submitTimeButton.disabled = false;
 	
 	# Clear node
