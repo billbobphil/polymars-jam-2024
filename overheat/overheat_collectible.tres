@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://mnhiyha5hd56"]
+
+[ext_resource type="Texture2D" uid="uid://buje2j3jmhp08" path="res://aseprite_files/overheat_pickup.png" id="1_fsmqm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1rvn"]
+atlas = ExtResource("1_fsmqm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8flbt"]
+atlas = ExtResource("1_fsmqm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu6qb"]
+atlas = ExtResource("1_fsmqm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4yl5"]
+atlas = ExtResource("1_fsmqm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cboln"]
+atlas = ExtResource("1_fsmqm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2jyg"]
+atlas = ExtResource("1_fsmqm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rfyl"]
+atlas = ExtResource("1_fsmqm")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5jai"]
+atlas = ExtResource("1_fsmqm")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1rvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8flbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu6qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4yl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cboln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2jyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rfyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5jai")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]

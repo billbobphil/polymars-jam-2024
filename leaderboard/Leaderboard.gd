@@ -48,11 +48,11 @@ func _authentication_request():
 		player_session_exists = true
 		
 	## Convert data to json string:
-	var data = { "game_key": game_API_key, "game_version": "0.0.0.1", "development_mode": true }
+	var data = { "game_key": game_API_key, "game_version": "0.0.0.1", "development_mode": development_mode }
 	
 	# If a player session already exists, send with the player identifier
 	if(player_session_exists == true):
-		data = { "game_key": game_API_key, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": true }
+		data = { "game_key": game_API_key, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": development_mode }
 	
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
@@ -111,16 +111,19 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	# Print data
 	print(json.get_data())
 	
+	if(json.get_data().items == null):
+		leaderboardContentLabel.text = "No scores yet!";
+	else:
 	# Formatting as a leaderboard
-	var leaderboardFormatted = ""
-	for n in json.get_data().items.size():
-		leaderboardFormatted += str(json.get_data().items[n].rank)+str(". ")
-		leaderboardFormatted += str(json.get_data().items[n].player.name)
-		leaderboardFormatted += str("(")+str(json.get_data().items[n].player.id)+str(")")+str(" - ")
-		leaderboardFormatted += parseScoreToTime(json.get_data().items[n].score)+str("\n");
-	# Print the formatted leaderboard to the console
-	print(leaderboardFormatted)
-	leaderboardContentLabel.text = leaderboardFormatted;
+		var leaderboardFormatted = ""
+		for n in json.get_data().items.size():
+			leaderboardFormatted += str(json.get_data().items[n].rank)+str(". ")
+			leaderboardFormatted += str(json.get_data().items[n].player.name)
+			leaderboardFormatted += str("(")+str(json.get_data().items[n].player.id)+str(")")+str(" - ")
+			leaderboardFormatted += parseScoreToTime(json.get_data().items[n].score)+str("\n");
+		# Print the formatted leaderboard to the console
+		print(leaderboardFormatted)
+		leaderboardContentLabel.text = leaderboardFormatted;
 	# Clear node
 	leaderboard_http.queue_free()
 

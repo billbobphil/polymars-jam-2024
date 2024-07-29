@@ -1,9 +1,97 @@
-[gd_scene load_steps=2 format=3 uid="uid://2bqbgn2xntdy"]
+[gd_scene load_steps=5 format=3 uid="uid://2bqbgn2xntdy"]
 
 [ext_resource type="PackedScene" uid="uid://b1qcyufjxphdb" path="res://positionNode/position_node.tscn" id="1_qw8yg"]
+[ext_resource type="SpriteFrames" uid="uid://mnhiyha5hd56" path="res://overheat/overheat_collectible.tres" id="2_ibgig"]
+
+[sub_resource type="Animation" id="Animation_no5j5"]
+resource_name = "rotate"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ag4el"]
+_data = {
+"rotate": SubResource("Animation_no5j5")
+}
 
 [node name="MaxOverheatPositionNode" groups=["maxOverheatNodes"] instance=ExtResource("1_qw8yg")]
-inactiveColor = Color(0.772549, 0.313726, 0.168627, 1)
 
 [node name="Sprite2D" parent="." index="1"]
-self_modulate = Color(0.772549, 0.313726, 0.168627, 1)
+rotation = -0.0492909
+scale = Vector2(1.06, 1.06)
+
+[node name="Node2D" type="Node2D" parent="." index="3"]
+rotation = 0.565487
+
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="Node2D" index="0"]
+position = Vector2(-21, -23)
+rotation = -0.741249
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_ibgig")
+autoplay = "default"
+
+[node name="Sprite2D3" type="AnimatedSprite2D" parent="Node2D" index="1"]
+position = Vector2(-31, -2.38419e-07)
+rotation = -1.51417
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_ibgig")
+autoplay = "default"
+
+[node name="Sprite2D4" type="AnimatedSprite2D" parent="Node2D" index="2"]
+position = Vector2(-21, 23)
+rotation = -2.30201
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_ibgig")
+autoplay = "default"
+
+[node name="Sprite2D5" type="AnimatedSprite2D" parent="Node2D" index="3"]
+position = Vector2(0, -30)
+rotation = -0.00757122
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_ibgig")
+autoplay = "default"
+
+[node name="Sprite2D6" type="AnimatedSprite2D" parent="Node2D" index="4"]
+position = Vector2(20, -22)
+rotation = 0.798594
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_ibgig")
+autoplay = "default"
+
+[node name="Sprite2D7" type="AnimatedSprite2D" parent="Node2D" index="5"]
+position = Vector2(28, -1.19209e-07)
+rotation = 1.56898
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_ibgig")
+autoplay = "default"
+
+[node name="Sprite2D8" type="AnimatedSprite2D" parent="Node2D" index="6"]
+position = Vector2(19, 23)
+rotation = 2.43345
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_ibgig")
+autoplay = "default"
+
+[node name="Sprite2D9" type="AnimatedSprite2D" parent="Node2D" index="7"]
+position = Vector2(0, 29)
+rotation = 3.12658
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_ibgig")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" index="8"]
+libraries = {
+"": SubResource("AnimationLibrary_ag4el")
+}
+autoplay = "rotate"

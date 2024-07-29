@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://sldm530candc"]
+[gd_scene load_steps=18 format=3 uid="uid://sldm530candc"]
 
+[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="1_crtg2"]
 [ext_resource type="Script" path="res://positionNode/PositionNodeManager.gd" id="1_ict28"]
 [ext_resource type="PackedScene" uid="uid://bky4sf3pqxj7a" path="res://positionNode/position_node_checkpoint.tscn" id="2_8uvmt"]
 [ext_resource type="PackedScene" uid="uid://2bqbgn2xntdy" path="res://positionNode/max_overheat_position_node.tscn" id="3_eivpc"]
@@ -15,8 +16,129 @@
 [ext_resource type="PackedScene" uid="uid://da0uhxbiwcqcx" path="res://obstacles/circle_path_follow_obstacle.tscn" id="11_k4fwa"]
 [ext_resource type="PackedScene" uid="uid://cwrq6w0fwet4p" path="res://finish/finish.tscn" id="14_77kpb"]
 [ext_resource type="Script" path="res://HUD.gd" id="15_hqy2d"]
+[ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="17_ix074"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Backdrop" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.133333, 0.0117647, 0.12549, 1)
+position = Vector2(8181, -336)
+scale = Vector2(626.047, 289.148)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(853, 42.0001)
+rotation = 1.12308
+scale = Vector2(24.875, 24.875)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(2542, 571)
+rotation = 2.16513
+scale = Vector2(40.2112, 40.2112)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.0941176, 0, 0.0784314, 1)
+position = Vector2(1503, 575)
+rotation = 0.166047
+scale = Vector2(22.6563, 22.6563)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(5025, 515)
+rotation = 4.41444
+scale = Vector2(40.2112, 40.2112)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.0941176, 0, 0.0784314, 1)
+position = Vector2(5853, 1616)
+rotation = 1.61371
+scale = Vector2(22.6563, 22.6563)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.0941176, 0, 0.0784314, 1)
+position = Vector2(7087, 1060)
+rotation = 2.57385
+scale = Vector2(34.6193, 34.6193)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(6489, 1417)
+rotation = 2.13071
+scale = Vector2(16.9073, 16.9073)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(8636.61, 500.611)
+rotation = 0.326445
+scale = Vector2(24.875, 24.875)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(10325.6, 1029.61)
+rotation = 1.3685
+scale = Vector2(40.2112, 40.2112)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.0941176, 0, 0.0784314, 1)
+position = Vector2(9286.61, 1033.61)
+rotation = -0.630589
+scale = Vector2(22.6563, 22.6563)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(16173, -2290)
+rotation = 4.27473
+scale = Vector2(40.2112, 40.2112)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.0941176, 0, 0.0784314, 1)
+position = Vector2(12838.7, -1973.27)
+rotation = 0.817074
+scale = Vector2(22.6563, 22.6563)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.0941176, 0, 0.0784314, 1)
+position = Vector2(14072.7, -2529.27)
+rotation = 1.77721
+scale = Vector2(34.6193, 34.6193)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(13474.7, -2172.27)
+rotation = 1.33408
+scale = Vector2(16.9073, 16.9073)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.305882, 0.027451, 0.145098, 1)
+position = Vector2(4068, 854)
+rotation = 0.704012
+scale = Vector2(25.6293, 25.6293)
+texture = ExtResource("1_crtg2")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Backdrop"]
+self_modulate = Color(0.305882, 0.027451, 0.145098, 1)
+position = Vector2(11826, -125)
+rotation = -2.37716
+scale = Vector2(40.5301, 40.5301)
+texture = ExtResource("1_crtg2")
 
 [node name="PositionNodeManager" type="Node2D" parent="."]
 script = ExtResource("1_ict28")
@@ -570,6 +692,56 @@ position = Vector2(12469, -1430)
 [node name="Finish" parent="." node_paths=PackedStringArray("hud") instance=ExtResource("14_77kpb")]
 position = Vector2(16201, -2513)
 hud = NodePath("../HUD")
+
+[node name="ClickLabel" type="Label" parent="."]
+offset_left = 238.0
+offset_top = 111.0
+offset_right = 310.0
+offset_bottom = 134.0
+theme = ExtResource("17_ix074")
+text = "Click"
+
+[node name="AvoidLabel" type="Label" parent="."]
+offset_left = 349.0
+offset_top = 52.0
+offset_right = 421.0
+offset_bottom = 75.0
+theme = ExtResource("17_ix074")
+text = "Avoid"
+
+[node name="CollectLabel" type="Label" parent="."]
+offset_left = 895.0
+offset_top = 206.0
+offset_right = 997.0
+offset_bottom = 229.0
+theme = ExtResource("17_ix074")
+text = "Collect"
+
+[node name="CheckpointLabel" type="Label" parent="."]
+offset_left = 1975.0
+offset_top = 369.0
+offset_right = 2129.0
+offset_bottom = 392.0
+theme = ExtResource("17_ix074")
+text = "Checkpoint"
+
+[node name="WarpLabel" type="Label" parent="."]
+offset_left = 4322.0
+offset_top = 26.0
+offset_right = 4476.0
+offset_bottom = 49.0
+theme = ExtResource("17_ix074")
+text = "Warp"
+
+[node name="BreakLabel" type="Label" parent="."]
+offset_left = 7973.0
+offset_top = 1046.0
+offset_right = 8189.0
+offset_bottom = 1077.0
+theme = ExtResource("17_ix074")
+text = "Set ablaze
+to burn through"
+horizontal_alignment = 1
 
 [node name="Player" parent="." node_paths=PackedStringArray("startingCheckpoint") instance=ExtResource("4_3aab6")]
 position = Vector2(39, 161)

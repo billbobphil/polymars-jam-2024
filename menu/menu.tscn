@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1ryxewd4vsyq"]
+[gd_scene load_steps=9 format=3 uid="uid://d1ryxewd4vsyq"]
 
 [ext_resource type="Script" path="res://menu/Menu.gd" id="1_u5400"]
 [ext_resource type="Theme" uid="uid://khgcs3srjs2a" path="res://theme.tres" id="2_b6dr1"]
 [ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="2_ce7yu"]
 [ext_resource type="PackedScene" uid="uid://bvceo2m3god6e" path="res://leaderboard/leaderboard.tscn" id="2_s5od7"]
 [ext_resource type="Texture2D" uid="uid://cmh2pj3e6xp44" path="res://misc-art/title.png" id="3_cotxi"]
+[ext_resource type="Texture2D" uid="uid://dauusimea5td7" path="res://aseprite_files/player_attempt.png" id="5_6gu3y"]
+[ext_resource type="FontFile" uid="uid://dde8we5p4pnw5" path="res://fonts/GraffitiUrban-Shadow.otf" id="5_efieb"]
+[ext_resource type="FontFile" uid="uid://cvn7e2hbany71" path="res://fonts/GraffitiUrban-Regular.otf" id="6_qhl2a"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_u5400")
@@ -27,28 +30,61 @@ theme = ExtResource("2_b6dr1")
 text = "PLAY"
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 self_modulate = Color(0.427451, 0.0352941, 0.141176, 1)
 position = Vector2(336.875, 293.888)
 scale = Vector2(0.917227, 0.917227)
 texture = ExtResource("3_cotxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 self_modulate = Color(0.694118, 0.054902, 0.145098, 1)
 position = Vector2(344.875, 301.888)
 scale = Vector2(0.917227, 0.917227)
 texture = ExtResource("3_cotxi")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 self_modulate = Color(0.956863, 0.611765, 0.117647, 1)
 position = Vector2(352.875, 307.888)
 scale = Vector2(0.917227, 0.917227)
 texture = ExtResource("3_cotxi")
 
 [node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 self_modulate = Color(0.956863, 0.611765, 0.117647, 1)
 position = Vector2(361.875, 313.888)
 scale = Vector2(0.917227, 0.917227)
 texture = ExtResource("3_cotxi")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(476, 603)
+scale = Vector2(7.11719, 7.11719)
+texture = ExtResource("5_6gu3y")
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 117.0
+offset_top = 127.21
+offset_right = 553.0
+offset_bottom = 516.21
+rotation = -0.133909
+theme_override_colors/font_color = Color(0.305882, 0.027451, 0.145098, 1)
+theme_override_fonts/font = ExtResource("5_efieb")
+theme_override_font_sizes/font_size = 192
+text = "Blaze
+Runner"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 117.0
+offset_top = 127.21
+offset_right = 553.0
+offset_bottom = 516.21
+rotation = -0.133909
+theme_override_colors/font_color = Color(0.870588, 0.431373, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("6_qhl2a")
+theme_override_font_sizes/font_size = 192
+text = "Blaze
+Runner"
 
 [node name="Leaderboard" parent="." instance=ExtResource("2_s5od7")]
 

@@ -1,15 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3oiqccgc66c2"]
+[gd_scene load_steps=8 format=3 uid="uid://d3oiqccgc66c2"]
 
-[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="1_w3axv"]
+[ext_resource type="Texture2D" uid="uid://c3xu26l3r0w71" path="res://aseprite_files/blaze_pickup.png" id="1_f4xes"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd6il"]
+atlas = ExtResource("1_f4xes")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1it1h"]
+atlas = ExtResource("1_f4xes")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f0j2"]
+atlas = ExtResource("1_f4xes")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t55m"]
+atlas = ExtResource("1_f4xes")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fscrs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd6il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1it1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f0j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t55m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfbx8"]
 radius = 15.0
 
 [node name="Obstacle" type="Node2D" groups=["obstacles"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.0705882, 0.00784314, 1)
-texture = ExtResource("1_w3axv")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fscrs")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
 

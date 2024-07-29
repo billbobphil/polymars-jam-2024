@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv6is3opggogt"]
 
 [ext_resource type="Script" path="res://warp/WarpEntrance.gd" id="1_ecmj4"]
-[ext_resource type="Texture2D" uid="uid://dkmyb0xf0t6a2" path="res://tempAssets/32x32-cube.png" id="1_oky2h"]
+[ext_resource type="Texture2D" uid="uid://c2bha7x8degv0" path="res://aseprite_files/blue_portal.png" id="2_spa6y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7q2c"]
 radius = 25.02
@@ -10,8 +10,9 @@ radius = 25.02
 script = ExtResource("1_ecmj4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0.470588, 0.85098, 1)
-texture = ExtResource("1_oky2h")
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(2, 2)
+texture = ExtResource("2_spa6y")
 
 [node name="Area2D" type="Area2D" parent="."]
 

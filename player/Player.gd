@@ -15,7 +15,9 @@ var currentCheckpoint : PositionNode;
 @export var startingCheckpoint : PositionNode;
 
 @onready var camera : Camera2D = $Camera2D;
-@onready var overheatLabel : Label = $CanvasLayer/OverheatLabel;
+@onready var overheatChargeLabel : Node2D = $CanvasLayer/OverheatChargingHolder;
+@onready var overheatLabel : Node2D = $CanvasLayer/OverheatLabelHolder;
+@onready var overheatBar : ProgressBar = $CanvasLayer/ProgressBar;
 @export var requiredOverheatCollections : int = 3;
 var currentOverheatCollections : int = 0;
 var overheatAvailable : bool = false;
@@ -82,6 +84,8 @@ func overheat():
 		overheatTimer = 0;
 		isOverheatActive = true;
 		overheatLabel.visible = false;
+		overheatChargeLabel.visible = true;
+		overheatBar.value = 0;
 
 func moveToNode(node):
 	if(isWarping):
@@ -106,6 +110,7 @@ func _on_area_2d_area_entered(area: Area2D):
 
 	if(parent.is_in_group("maxOverheatNodes")):
 		currentOverheatCollections = requiredOverheatCollections;
+		overheatBar.value = 100;
 		makeOverheatAvailable();
 		return;
 	
@@ -115,6 +120,7 @@ func _on_area_2d_area_entered(area: Area2D):
 		parent.queue_free();
 		print("Overheat collected");
 		currentOverheatCollections += 1;
+		overheatBar.value = (float(currentOverheatCollections) / float(requiredOverheatCollections)) * 100;
 		print("current overheats: ", currentOverheatCollections);
 		if(currentOverheatCollections >= requiredOverheatCollections):
 			makeOverheatAvailable();
@@ -123,6 +129,7 @@ func _on_area_2d_area_entered(area: Area2D):
 func makeOverheatAvailable():
 	overheatAvailable = true;
 	overheatLabel.visible = true;
+	overheatChargeLabel.visible = false;
 
 func getHit():
 	#TODO: make it fancy
