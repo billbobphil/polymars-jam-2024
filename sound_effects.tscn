@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bhj54uo41b2nk" path="res://soundEffects/overheat-end.mp3" id="10_3rdii"]
 [ext_resource type="AudioStream" uid="uid://cwx4mjaol7hwf" path="res://soundEffects/get-checkpoint.mp3" id="11_7ihy4"]
 
-[node name="SoundEffects" type="Node2D" node_paths=PackedStringArray("buttonHover", "buttonClick", "getHit", "collectOverheat", "goIntoOverheat", "breakEffect", "warp", "clickPositionNode", "endOverheat")]
+[node name="SoundEffects" type="Node2D" node_paths=PackedStringArray("buttonHover", "buttonClick", "getHit", "collectOverheat", "goIntoOverheat", "breakEffect", "warp", "clickPositionNode", "endOverheat", "getCheckpoint")]
 script = ExtResource("1_m7lah")
 buttonHover = NodePath("ButtonHover")
 buttonClick = NodePath("ButtonClick")
@@ -23,6 +23,7 @@ breakEffect = NodePath("Break")
 warp = NodePath("Warp")
 clickPositionNode = NodePath("ClickPositionNode")
 endOverheat = NodePath("EndOverheat")
+getCheckpoint = NodePath("GetCheckpoint")
 
 [node name="ButtonHover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_cpvkp")

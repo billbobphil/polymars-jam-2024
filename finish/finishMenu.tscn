@@ -20,6 +20,20 @@ position = Vector2(653, 364)
 scale = Vector2(41.0313, 23.5625)
 texture = ExtResource("2_w3coa")
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0.2, 0.0196078, 0.133333, 1)
+position = Vector2(612, 198)
+rotation = 0.543958
+scale = Vector2(13.375, 13.375)
+texture = ExtResource("2_w3coa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0.305882, 0.027451, 0.145098, 1)
+position = Vector2(150, 614)
+rotation = -0.331824
+scale = Vector2(9.20536, 9.20536)
+texture = ExtResource("2_w3coa")
+
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
 offset_left = 116.0
 offset_top = 605.0
