@@ -84,6 +84,7 @@ func _process(delta):
 
 func overheat():
 	if(overheatAvailable && allowOverheat):
+		overheatAvailable = false;
 		currentOverheatCollections = 0;
 		overheatTimer = 0;
 		isOverheatActive = true;
